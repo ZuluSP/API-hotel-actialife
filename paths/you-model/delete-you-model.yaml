@@ -3,17 +3,7 @@ tags:
 summary: Deletes a YouModel
 operationId: deleteYouModel
 parameters:
-  - name: api_key
-    in: header
-    schema:
-      type: string
-  - name: id
-    in: path
-    description: YouModel id to delete
-    required: true
-    schema:
-      type: integer
-      format: int64
+  - $ref: "../../parameters/id/id-path-param.yaml"
 responses:
   400:
     description: Invalid ID supplied

@@ -12,3 +12,5 @@ sortParam:
 stateIds:
   $ref: './pagination/state-ids-param.yaml'
 # Generic parameters
+id:
+  $ref: './id/id-path-param.yaml'

@@ -5,7 +5,7 @@ info:
   description:
     "This is a Base API Project created by [Procesos 4.0 - Ctag](http://ctag.com/). All doc that you need is [here](https://git.procesos.ctag.com/Paperless-API/docs)."
 servers:
-  - url: localhost:8080
+  - url: http://localhost:8080
   - url: https://you-backend-preprod-procesos.ctag
   - url: https://you-backend-prod-procesos.ctag
 tags:

@@ -14,12 +14,12 @@ This project is created with [🏡Base-API](https://git.procesos.ctag.com/Paperl
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
-- [👀 Watch](#👀-watch)
+- [👀 Watch](#👀-watcher)
 - [Shortcuts](#shortcuts)
 
 # Overview
 
-🏡 Base-API is a swagger project created following the [📘 CTAG Standard](https://git.procesos.ctag.com/Paperless-API/docs). You can **clone** and **edit** all examples with your own requirements
+You can **clone** this project **to** generate a **new API** following the [📘 CTAG Standard](https://git.procesos.ctag.com/Paperless-API/docs) and **edit** all examples with your own requirements.
 
 # Getting Started
 
@@ -35,8 +35,11 @@ This project is created with [🏡Base-API](https://git.procesos.ctag.com/Paperl
 
 - ✏️ Update in README.md the [Overview](#Overview) headland
 
+- ✏️ Update in openapi.yaml the servers -url
+
 - Rules
   - This generic folders don't should be removed:
+    - 🚫 **parameters/id** folder
     - 🚫 **parameters/pagination** folder
     - 🚫 **responses/generic** folder
 
@@ -56,7 +59,7 @@ This project is created with [🏡Base-API](https://git.procesos.ctag.com/Paperl
 
 - 💣 Delete step [Getting Started](#getting-started)
 
-# 👀 Watch
+# 👀 Watcher
 
 Follow this [guide](https://git.procesos.ctag.com/Paperless-API/docs/blob/master/watcher-ui-guide.md) or run this if you already have before:
 
