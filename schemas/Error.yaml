@@ -1,0 +1,24 @@
+type: object
+required:
+  - code
+  - message
+description: This is returned as error response
+properties:
+  code:
+    description: internal paperless code error
+    type: string
+  message:
+    description: message error
+    type: string
+  stringProperty:
+    description: optional property type of string that can be used
+    type: string
+  integerProperty:
+    description: optional property type of integer that can be used
+    format: int32
+    type: integer
+  ids:
+    description: optional list of ids if is necessary
+    items:
+      type: integer
+    type: array

@@ -1,0 +1,8 @@
+200:
+  $ref: '../responses/generic/success/200/200-response.yaml'
+400:
+  $ref: '../responses/generic/error/400/400-response.yaml'
+401:
+  $ref: '../responses/generic/error/401/401-response.yaml'
+404:
+  $ref: '../responses/generic/error/404/404-response.yaml'

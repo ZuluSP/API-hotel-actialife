@@ -1,0 +1,33 @@
+tags:
+  - tags
+summary: Find with Pagination
+description: Find all tags with pagination parameters
+operationId: findTags
+parameters:
+  - $ref: "../../parameters/pagination/attribute-param.yaml"
+  - $ref: "../../parameters/pagination/limit-param.yaml"
+  - $ref: "../../parameters/pagination/offset-param.yaml"
+  - $ref: "../../parameters/pagination/page-param.yaml"
+  - $ref: "../../parameters/pagination/sort-param.yaml"
+  - $ref: "../../parameters/pagination/state-ids-param.yaml"
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "../../schemas/Tag.yaml"
+  400:
+    description: Custom Invalid with array Errors
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "../../schemas/Error.yaml"
+  401:
+    $ref: "../../responses/generic/error/401/401-response.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

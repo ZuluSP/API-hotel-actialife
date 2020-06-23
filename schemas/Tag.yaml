@@ -1,0 +1,9 @@
+type: object
+required:
+  - id
+  - name
+properties:
+  id:
+    $ref: '../parameters/id/id-param.yaml'
+  name:
+    type: string

@@ -1,0 +1,21 @@
+tags:
+  - you-model
+summary: Add a new YouModel to the save
+operationId: addYouModel
+requestBody:
+  required: true
+  description: YouModel object that needs to be saved
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/YouModelCreate.yaml"
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/YouModel.yaml"
+  405:
+    description: Invalid input
+    content: {}

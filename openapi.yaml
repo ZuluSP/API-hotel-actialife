@@ -1,0 +1,26 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: Swagger Base API
+  description:
+    "This is a Base API Project created by [Procesos 4.0 - Ctag](http://ctag.com/). All doc that you need is [here](https://git.procesos.ctag.com/Paperless-API/docs)."
+servers:
+  - url: http://localhost:8080
+  - url: https://you-backend-preprod-procesos.ctag
+  - url: https://you-backend-prod-procesos.ctag
+tags:
+  - name: tags
+    description: Everything about your Tags
+  - name: you-basic-model
+    description: Everything about your YouBasicModel
+  - name: you-model
+    description: All that you can do with YouModel
+paths:
+  $ref: "./paths/public-paths.yaml"
+components:
+  parameters:
+    $ref: "./parameters/public-parameters.yaml"
+  schemas:
+    $ref: "./schemas/public-schemas.yaml"
+  responses:
+    $ref: "./responses/public-responses.yaml"
