@@ -1,0 +1,10 @@
+Tag:
+  $ref: "./Tag.yaml"
+YouBasicModel:
+  $ref: "./YouBasicModel.yaml"
+YouModelCreate:
+  $ref: "./YouModelCreate.yaml"
+YouModel:
+  $ref: "./YouModel.yaml"
+Error:
+  $ref: "./Error.yaml"

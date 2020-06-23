@@ -1,0 +1,16 @@
+description: YouModelCreate Extension
+allOf:
+  - $ref: './YouModelCreate.yaml'
+  - properties:
+      # TODO: - $ref: 'parameters/id/id-param.yaml'
+      id:
+        type: integer
+        format: int64
+      status:
+        type: integer
+        format: int64
+        description: Status
+    type: object
+    required:
+      - id
+      - status
