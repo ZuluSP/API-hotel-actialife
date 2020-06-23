@@ -1,0 +1,16 @@
+# Pagination parameters
+attributeParam:
+  $ref: './pagination/attribute-param.yaml'
+limitParam:
+  $ref: './pagination/limit-param.yaml'
+offsetParam:
+  $ref: './pagination/offset-param.yaml'
+pageParam:
+  $ref: './pagination/page-param.yaml'
+sortParam:
+  $ref: './pagination/sort-param.yaml'
+stateIds:
+  $ref: './pagination/state-ids-param.yaml'
+# Generic parameters
+id:
+  $ref: './id/id-path-param.yaml'

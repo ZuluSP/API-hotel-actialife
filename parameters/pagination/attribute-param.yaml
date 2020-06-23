@@ -1,0 +1,5 @@
+description: 'If pagination is attribute-based, returns the attribute that should be used, NO USE'
+in: query
+name: attribute
+schema:
+  type: string

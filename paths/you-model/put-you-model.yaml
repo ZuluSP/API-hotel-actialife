@@ -1,0 +1,27 @@
+tags:
+  - you-model
+summary: Update an existing YouModel
+operationId: updateYouModel
+requestBody:
+  description: YouModel object that needs to be added to the store
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/YouModel.yaml"
+  required: true
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/YouModel.yaml"
+  400:
+    description: Invalid ID supplied
+    content: {}
+  404:
+    description: YouModel not found
+    content: {}
+  405:
+    description: Validation exception
+    content: {}

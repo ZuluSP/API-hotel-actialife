@@ -1,0 +1,6 @@
+description: 'If pagination is offset-based, returns the number of items to skip'
+in: query
+name: offset
+schema:
+  format: int64
+  type: integer

@@ -1,0 +1,9 @@
+description: return the list sorted by the name you put here
+explode: true
+in: query
+name: sort
+schema:
+  items:
+    type: string
+  type: array
+style: form

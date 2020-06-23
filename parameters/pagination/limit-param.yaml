@@ -1,0 +1,6 @@
+description: Returns the limit if it has been specified
+in: query
+name: limit
+schema:
+  format: int64
+  type: integer
