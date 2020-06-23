@@ -1,0 +1,10 @@
+description: The Default filter is hidesItem=0
+explode: true
+in: query
+name: stateIds
+schema:
+  items:
+    format: int32
+    type: integer
+  type: array
+style: form

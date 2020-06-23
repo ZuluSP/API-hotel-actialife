@@ -1,0 +1,6 @@
+description: 'If pagination is page-based, returns the index of the page. Whether this index is 0-based or 1-based, depends on the business framework configuration, NO USE'
+in: query
+name: page
+schema:
+  format: int64
+  type: integer
