@@ -3,4 +3,4 @@ in: path
 name: id
 required: true
 schema:
-  $ref: '../../schemas/Id.yaml'
+  $ref: '../../schemas/generic/Id.yaml'

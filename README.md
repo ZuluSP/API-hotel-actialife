@@ -40,10 +40,10 @@ You can **clone** this project **to** generate a **new API** following the [📘
 - ✏️ Update in **openapi.yaml** the servers **-url**
 
 - **Rules**
-  -  All Schemas include **schemas/Id.yaml** file like this example:
+  -  All Schemas include **schemas/generic/Id.yaml** file like this example:
 
       ```yaml
-      # YouBasicModel.yaml
+      # ./schemas/you-basic-model/YouBasicModel.yaml
       type: object
       required:
         - id
@@ -82,9 +82,9 @@ You can **clone** this project **to** generate a **new API** following the [📘
     - 🚫 **parameters/pagination** folder
     - 🚫 **responses/generic** folder
 
-  - This generic files don't should be removed:
-    - 🚫**schemas/Id.yaml** file
-    - 🚫**schemas/Error.yaml** file
+  - **schemas/generic** files don't should be removed:
+    - 🚫**schemas/generic/Id.yaml** file
+    - 🚫**schemas/generic/Error.yaml** file
 
   - Go to **schemas** and **override** (or remove) with **you requirements**:
     -  ✏️ Tag.yaml

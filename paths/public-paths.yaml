@@ -1,16 +1,16 @@
 /tags:
   get:
-    $ref: "./tag/get-all-tags.yaml"
+    $ref: "./tag/get-all.yaml"
 /you-basic-model:
   get:
-    $ref: "./you-basic-model/get-all-you-basic-model.yaml"
+    $ref: "./you-basic-model/get-all.yaml"
 /you-model:
   put:
-    $ref: "./you-model/put-you-model.yaml"
+    $ref: "./you-model/put.yaml"
   post:
-    $ref: "./you-model/post-you-model.yaml"
+    $ref: "./you-model/post.yaml"
 /you-model/{id}:
   get:
-    $ref: "./you-model/get-you-model.yaml"
+    $ref: "./you-model/get.yaml"
   delete:
-    $ref: "./you-model/delete-you-model.yaml"
+    $ref: "./you-model/delete.yaml"

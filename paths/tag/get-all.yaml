@@ -18,7 +18,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: "../../schemas/Tag.yaml"
+            $ref: "../../schemas/tag/Tag.yaml"
   400:
     description: Custom Invalid with array Errors
     content:
@@ -26,7 +26,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: "../../schemas/Error.yaml"
+            $ref: "../../schemas/generic/Error.yaml"
   401:
     $ref: "../../responses/generic/error/401/401-response.yaml"
   404:
