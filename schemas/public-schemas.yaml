@@ -8,3 +8,5 @@ YouModel:
   $ref: "./YouModel.yaml"
 Error:
   $ref: "./Error.yaml"
+Id:
+  $ref: "./Id.yaml"

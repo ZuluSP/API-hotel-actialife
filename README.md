@@ -35,29 +35,69 @@ You can **clone** this project **to** generate a **new API** following the [📘
 
 - ✏️ Update in README.md the [Overview](#Overview) headland
 
-- ✏️ Update in openapi.yaml the servers -url
+- ✏️ Update in **openapi.yaml** the **title**
 
-- Rules
+- ✏️ Update in **openapi.yaml** the servers **-url**
+
+- **Rules**
+  -  All Schemas include **schemas/Id.yaml** file like this example:
+
+      ```yaml
+      # YouBasicModel.yaml
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          $ref: './Id.yaml'
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            $ref: './Tag.yaml'
+      ```
+
+      Output:
+      ```yaml
+      YouBasicModel:
+        type: object
+        required:
+          - id
+          - name
+        properties:
+          id:
+            $ref: '#/components/schemas/Id'
+          name:
+            type: string
+          tags:
+            type: array
+            items:
+              $ref: '#/components/schemas/Tag'
+      ```
+
   - This generic folders don't should be removed:
     - 🚫 **parameters/id** folder
     - 🚫 **parameters/pagination** folder
     - 🚫 **responses/generic** folder
 
   - This generic files don't should be removed:
+    - 🚫**schemas/Id.yaml** file
     - 🚫**schemas/Error.yaml** file
 
-- Go to **schemas** and **override** (or remove) with **you requirements**:
-  -  ✏️ Tag.yaml
-  -  ✏️ YouBasicModel.yaml
-  -  ✏️ YouModelCreate.yaml
-  -  ✏️ YouModer.yaml
+  - Go to **schemas** and **override** (or remove) with **you requirements**:
+    -  ✏️ Tag.yaml
+    -  ✏️ YouBasicModel.yaml
+    -  ✏️ YouModelCreate.yaml
+    -  ✏️ YouModer.yaml
 
-- Go to **paths** and **override** (or remove) the folders with **you requirements**:
-  -  ✏️ tag
-  -  ✏️ you-basic-model
-  -  ✏️ you-model
+  - Go to **paths** and **override** (or remove) the folders with **you requirements**:
+    -  ✏️ tag
+    -  ✏️ you-basic-model
+    -  ✏️ you-model
 
-- 💣 Delete step [Getting Started](#getting-started)
+  - 💣 Delete step [Getting Started](#getting-started)
 
 # 👀 Watcher
 
