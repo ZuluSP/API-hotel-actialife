@@ -7,7 +7,7 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: "../../schemas/YouModel.yaml"
+        $ref: "../../schemas/you-model/YouModel.yaml"
   required: true
 responses:
   200:
@@ -15,7 +15,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: "../../schemas/YouModel.yaml"
+          $ref: "../../schemas/you-model/YouModel.yaml"
   400:
     description: Invalid ID supplied
     content: {}

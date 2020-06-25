@@ -4,10 +4,10 @@ required:
   - name
 properties:
   id:
-    $ref: './Id.yaml'
+    $ref: '../generic/Id.yaml'
   name:
     type: string
   tags:
     type: array
     items:
-      $ref: './Tag.yaml'
+      $ref: '../tag/Tag.yaml'

@@ -1,12 +1,14 @@
 Tag:
-  $ref: "./Tag.yaml"
+  $ref: "./tag/Tag.yaml"
 YouBasicModel:
-  $ref: "./YouBasicModel.yaml"
+  $ref: "./you-basic-model/YouBasicModel.yaml"
 YouModelCreate:
-  $ref: "./YouModelCreate.yaml"
+  $ref: "./you-model/YouModelCreate.yaml"
 YouModel:
-  $ref: "./YouModel.yaml"
+  $ref: "./you-model/YouModel.yaml"
+# Generic
 Error:
-  $ref: "./Error.yaml"
+  $ref: "./generic/Error.yaml"
 Id:
-  $ref: "./Id.yaml"
+  $ref: "./generic/Id.yaml"
+# End Generic
