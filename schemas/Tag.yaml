@@ -4,6 +4,6 @@ required:
   - name
 properties:
   id:
-    $ref: '../parameters/id/id-param.yaml'
+    $ref: './Id.yaml'
   name:
     type: string

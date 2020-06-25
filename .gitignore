@@ -39,6 +39,8 @@ Thumbs.db
 # Yeoman settings
 .yo-rc.json
 
+# API Utils
 *generated-jaxrs
 swagger.yaml
 *-swagger-rest
+*.jar
