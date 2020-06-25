@@ -3,7 +3,7 @@ allOf:
   - $ref: './YouModelCreate.yaml'
   - properties:
       id:
-        $ref: './Id.yaml'
+        $ref: '../generic/Id.yaml'
       status:
         type: integer
         format: int64

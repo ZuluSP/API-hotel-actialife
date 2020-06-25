@@ -20,5 +20,5 @@ properties:
   ids:
     description: optional list of ids if is necessary
     items:
-      type: integer
+      $ref: './Id.yaml'
     type: array

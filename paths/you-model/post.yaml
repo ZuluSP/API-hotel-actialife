@@ -8,14 +8,14 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: "../../schemas/YouModelCreate.yaml"
+        $ref: "../../schemas/you-model/YouModelCreate.yaml"
 responses:
   200:
     description: successful operation
     content:
       application/json:
         schema:
-          $ref: "../../schemas/YouModel.yaml"
+          $ref: "../../schemas/you-model/YouModel.yaml"
   405:
     description: Invalid input
     content: {}
