@@ -1,0 +1,24 @@
+description: custom content for images
+content:
+  # a binary file of type jpeg, jpg, png, mp4 and others
+  image/jpeg:
+    schema:
+      $ref: "../../schemas/generic/Binary.yaml"
+  image/jpg:
+    schema:
+      $ref: "../../schemas/generic/Binary.yaml"
+  image/png:
+    schema:
+      $ref: "../../schemas/generic/Binary.yaml"
+  video/mp4:
+    schema:
+      $ref: "../../schemas/generic/Binary.yaml"
+  video/quicktime:
+    schema:
+      $ref: "../../schemas/generic/Binary.yaml"
+  video/x-msvideo:
+    schema:
+      $ref: "../../schemas/generic/Binary.yaml"
+  video/x-ms-wmv:
+    schema:
+      $ref: "../../schemas/generic/Binary.yaml"
