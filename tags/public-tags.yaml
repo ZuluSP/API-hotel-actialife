@@ -1,0 +1,6 @@
+  - name: tags
+    description: Everything about your Tags
+  - name: you-basic-model
+    description: Everything about your YouBasicModel
+  - name: you-model
+    description: All that you can do with YouModel
