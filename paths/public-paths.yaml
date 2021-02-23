@@ -1,3 +1,6 @@
+/file:
+  get:
+    $ref: "./file/get-all.yaml"
 /tags:
   get:
     $ref: "./tag/get-all.yaml"

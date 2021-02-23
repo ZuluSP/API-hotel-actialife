@@ -7,6 +7,8 @@ YouModelCreate:
 YouModel:
   $ref: "./you-model/YouModel.yaml"
 # Generic
+Binary:
+  $ref: './generic/Binary.yaml'
 Error:
   $ref: "./generic/Error.yaml"
 Id:
