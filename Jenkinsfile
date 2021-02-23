@@ -1,2 +1,2 @@
 @Library("jenkins-libs") _
-    apiPipeline()
+    apiPipeline(['ng-version':10])
