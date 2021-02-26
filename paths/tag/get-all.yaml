@@ -1,7 +1,8 @@
 tags:
   - tags
-summary: Find with Pagination
-description: Find all tags with pagination parameters
+summary: Find with Pagination without security
+security: []
+description: Find all tags with pagination parameters without security
 operationId: findTags
 parameters:
   - $ref: "../../parameters/pagination/attribute-param.yaml"
