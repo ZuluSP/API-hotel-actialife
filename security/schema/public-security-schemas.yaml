@@ -1,0 +1,2 @@
+JwtApiKey:
+  $ref: "./jwt/JwtToken.yaml"
