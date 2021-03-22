@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  version: 2.0.0
+  version: 2.0.1
   title: swagger-base-api
   description:
     "This is a Base API Project created by [Procesos 4.0 - Ctag](http://ctag.com/). All doc that you need is [here](https://git.procesos.ctag.com/Paperless-API/docs)."
