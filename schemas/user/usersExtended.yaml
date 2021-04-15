@@ -1,0 +1,14 @@
+description: Base DTO, user Extension with role
+type: object
+allOf:
+  - $ref: './user.yaml'
+  - properties:
+      role:
+        type: array
+        items:
+          $ref: '../role/role.yaml'
+
+   
+
+    required:
+      - role

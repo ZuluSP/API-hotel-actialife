@@ -1,0 +1,22 @@
+tags:
+  - Role
+summary: Update role
+description: Updates one role
+operationId: updateRole
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/role/roleUpdate.yaml"
+  required: true
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/role/role.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

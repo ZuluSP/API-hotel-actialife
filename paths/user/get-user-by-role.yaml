@@ -1,0 +1,16 @@
+tags:
+  - User-Role
+summary: Get user with role
+description: Get user Extended with role
+operationId: getUserByRole
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/user/usersExtended.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

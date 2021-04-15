@@ -1,0 +1,15 @@
+type: object
+description: user of mf bussiness money money
+
+allOf:
+  - $ref: "./usercreate.yaml"
+
+  - properties:
+      userId:
+        $ref: "../generic/Id.yaml"
+
+    type: object
+
+    required:
+      - userId
+      - name

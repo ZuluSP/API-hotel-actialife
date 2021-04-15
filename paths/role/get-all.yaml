@@ -1,18 +1,21 @@
 tags:
-  - you-basic-model
-summary: Find YouBasicModels
-description: Find all YouBasicModels
-operationId: findYouBasicModels
+  - Role
+summary: Get Roles
+description: Example how to get a Role
+operationId: getRoles
+
 parameters:
   - in: query
     name: id
     schema:
       type: integer
-      format: int64
+      format: int32
+
   - in: query
     name: name
     schema:
       type: string
+
 responses:
   200:
     description: successful operation
@@ -21,7 +24,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: "../../schemas/you-basic-model/YouBasicModel.yaml"
+            $ref: "../../schemas/role/role.yaml"
   400:
     description: Custom Invalid with array Errors
     content:

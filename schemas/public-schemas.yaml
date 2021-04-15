@@ -1,11 +1,14 @@
-Tag:
-  $ref: "./tag/Tag.yaml"
-YouBasicModel:
-  $ref: "./you-basic-model/YouBasicModel.yaml"
-YouModelCreate:
-  $ref: "./you-model/YouModelCreate.yaml"
-YouModel:
-  $ref: "./you-model/YouModel.yaml"
+user:
+  $ref: "./user/user.yaml"
+usercreate:
+  $ref: "./user/usercreate.yaml"
+usersExtended:
+  $ref: "./user/usersExtended.yaml"
+role:
+  $ref: "./role/role.yaml"
+rolecreate:
+  $ref: "./role/rolecreate.yaml"
+  
 # Generic
 Binary:
   $ref: './generic/Binary.yaml'

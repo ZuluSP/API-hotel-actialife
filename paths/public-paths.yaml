@@ -1,19 +1,30 @@
-/file:
+/user:
+    post:
+      $ref: "./user/post-user.yaml"
+    get:
+      $ref: "./user/get-all.yaml"
+ 
+/user/extended/{id}:
+  get:  
+    $ref: "./user/get-user-by-role.yaml"
+
+/user/{id}:
   get:
-    $ref: "./file/get-all.yaml"
-/tags:
-  get:
-    $ref: "./tag/get-all.yaml"
-/you-basic-model:
-  get:
-    $ref: "./you-basic-model/get-all.yaml"
-/you-model:
+    $ref: "./user/get-user.yaml"
   put:
-    $ref: "./you-model/put.yaml"
-  post:
-    $ref: "./you-model/post.yaml"
-/you-model/{id}:
-  get:
-    $ref: "./you-model/get.yaml"
+    $ref: "./user/put-user.yaml"
   delete:
-    $ref: "./you-model/delete.yaml"
+    $ref: "./user/delete-user.yaml"
+
+/role:
+  get:
+    $ref: "./role/get-all.yaml"
+  
+  post:
+    $ref: "./role/post-role.yaml"
+
+/role/{id}:
+  put:
+    $ref: "./role/put-role.yaml"
+  delete:
+    $ref: "./role/delete-role.yaml"

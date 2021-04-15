@@ -1,0 +1,22 @@
+tags:
+  - User
+summary: Update user
+description: Update user
+operationId: updateuser
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/user/userUpdate.yaml"
+  required: true
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/user/user.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

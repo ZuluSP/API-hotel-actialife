@@ -1,0 +1,5 @@
+description: Base DTO, user Extension
+allOf:
+  - $ref: './user.yaml'
+    type: object
+   

@@ -1,0 +1,14 @@
+tags:
+  - User
+summary: Create user
+description: Create a new user
+operationId: createuser
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/user/user.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

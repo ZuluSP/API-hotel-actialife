@@ -1,0 +1,29 @@
+  
+  type: object
+  required:
+    - name
+    - surname
+    - email
+    - telf
+    - address
+    - password
+    - roleId
+    
+  properties:
+    name:
+      type: string
+    surname:
+      type: string
+    email:
+      type: string
+      format: mail
+    telf:
+      type: string
+    address:
+      type: string
+    password:
+      type: string
+    roleId:
+      type: integer
+  
+    

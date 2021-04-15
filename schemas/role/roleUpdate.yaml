@@ -1,0 +1,5 @@
+description: Base DTO, role Extension
+allOf:
+  - $ref: './role.yaml'
+    type: object
+   

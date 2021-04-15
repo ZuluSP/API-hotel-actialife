@@ -1,0 +1,19 @@
+tags:
+  - Role
+summary: delete role
+description: delete one role
+operationId: deleteRole
+parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      $ref: '../../schemas/generic/Id.yaml'
+      
+responses:
+  204:
+    description: deleted successfully
+  400:
+    $ref: '../../responses/generic/error/400/400-response.yaml'
+  404:
+    $ref: '../../responses/generic/error/404/404-response.yaml'

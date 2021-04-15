@@ -1,0 +1,9 @@
+
+  type: object
+
+  required:
+    - nombreRol
+  
+  properties:
+    nombreRol:
+      type: string

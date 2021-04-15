@@ -1,16 +1,23 @@
 tags:
-  - tags
+  - User
 summary: Find with Pagination without security
 security: []
-description: Find all tags with pagination parameters without security
-operationId: findTags
+description: Find all users with pagination parameters without security
+operationId: findUsers
+
 parameters:
-  - $ref: "../../parameters/pagination/attribute-param.yaml"
-  - $ref: "../../parameters/pagination/limit-param.yaml"
-  - $ref: "../../parameters/pagination/offset-param.yaml"
-  - $ref: "../../parameters/pagination/page-param.yaml"
-  - $ref: "../../parameters/pagination/sort-param.yaml"
-  - $ref: "../../parameters/pagination/state-ids-param.yaml"
+  - in: query
+    name: id
+    schema:
+      type: integer
+      format: int32
+
+  - in: query
+    name: name
+    schema:
+      type: string
+
+  
 responses:
   200:
     description: successful operation
@@ -19,7 +26,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: "../../schemas/tag/Tag.yaml"
+            $ref: "../../schemas/user/user.yaml"
   400:
     description: Custom Invalid with array Errors
     content:
