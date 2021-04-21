@@ -1,0 +1,41 @@
+tags:
+  - HabitacionTipo
+summary: Get Rooms Type
+description: Example how to get a Room
+operationId: getHabitacionTipo
+
+parameters:
+  - in: query
+    name: id
+    schema:
+      type: integer
+      format: int32
+
+  - in: query
+    name: tipo_habitacion
+    schema:
+      type: string
+
+
+
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "../../schemas/habitaciontipo/habitacionTipo.yaml"
+  400:
+    description: Custom Invalid with array Errors
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "../../schemas/generic/Error.yaml"
+  401:
+    $ref: "../../responses/generic/error/401/401-response.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

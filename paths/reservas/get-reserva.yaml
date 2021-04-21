@@ -1,0 +1,21 @@
+tags:
+  - Reserva
+summary: Find reserva by ID
+description: Returns a single Reserva
+operationId: getReservaById
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/reservas/reservas.yaml"
+  400:
+    description: Invalid ID supplied
+    content: {}
+  404:
+    description: Reservas not found
+    content: {}

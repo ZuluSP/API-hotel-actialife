@@ -1,0 +1,12 @@
+type: object
+description: Type oF room from ActiaLife
+allOf:
+  - $ref: './habitacionTipoCreate.yaml'
+
+  - properties:
+      id:
+        $ref: '../generic/Id.yaml'
+        
+required:
+  - id
+  

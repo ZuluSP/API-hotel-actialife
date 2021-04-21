@@ -28,3 +28,42 @@
     $ref: "./role/put-role.yaml"
   delete:
     $ref: "./role/delete-role.yaml"
+
+/reservas:
+  get:
+    $ref: "./reservas/get-all.yaml"
+  post:
+    $ref: "./reservas/post-reserva.yaml"
+/reservas/{id}:
+  get:
+    $ref: "./reservas/get-reserva.yaml"
+  put:
+    $ref: "./reservas/put-reserva.yaml"
+  delete:
+    $ref: "./reservas/delete-reserva.yaml"
+
+/reservas/extended/UserId/{id}:
+  get:
+    $ref: "./reservas/get-reserva-by-userId.yaml"
+
+/reservas/extended/habitacionTipo/{id}:
+  get:
+    $ref: "./reservas/get-reservas-by-habitacionTipo.yaml"
+
+/habitaciontipo:
+  get:
+    $ref: "./habitaciontipo/get-all.yaml"
+  post:
+    $ref: "./habitaciontipo/post-habitacionTipo.yaml"
+
+/habitaciontipo/{id}:
+
+  get:
+    $ref: "./habitaciontipo/get-habitacionTipo-by-id.yaml"
+  delete:
+    $ref: "./habitaciontipo/delete-habitacionTipo.yaml"
+  put: 
+    $ref: "./habitaciontipo/put-habitacionTipo.yaml"
+  
+
+

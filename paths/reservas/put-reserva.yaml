@@ -1,0 +1,22 @@
+tags:
+  - Reserva
+summary: Update reserva
+description: Update reserva
+operationId: updatereserva
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/reservas/reservasUpdate.yaml"
+  required: true
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/reservas/reservas.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

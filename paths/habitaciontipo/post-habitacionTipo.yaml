@@ -1,0 +1,21 @@
+tags:
+  - HabitacionTipo
+summary: Create new Room Type
+description: Create a new Room Type
+operationId: createHabitacionTipo
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/habitaciontipo/habitacionTipoCreate.yaml"
+  required: true
+
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/habitacionTipo/habitacionTipo.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

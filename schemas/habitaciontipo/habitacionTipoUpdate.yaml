@@ -1,0 +1,5 @@
+description: Base DTO, habitacionTipo Extension
+allOf:
+  - $ref: './habitacionTipo.yaml'
+    type: object
+   

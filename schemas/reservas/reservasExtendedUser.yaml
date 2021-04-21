@@ -1,0 +1,14 @@
+description: Base DTO, reserva Extension with role
+type: object
+allOf:
+  - $ref: './reservas.yaml'
+  - properties:
+      user:
+        type: array
+        items:
+          $ref: '../user/user.yaml'
+
+   
+
+    required:
+      - userId

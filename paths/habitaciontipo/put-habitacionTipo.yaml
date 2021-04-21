@@ -1,0 +1,22 @@
+tags:
+  - HabitacionTipo
+summary: Update roomType
+description: Update room type
+operationId: updateHabitacionTipo
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/habitaciontipo/habitacionTipoUpdate.yaml"
+  required: true
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/habitaciontipo/habitacionTipo.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

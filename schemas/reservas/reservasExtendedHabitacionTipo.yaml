@@ -1,0 +1,14 @@
+description: Base DTO, user Extension with role
+type: object
+allOf:
+  - $ref: './reservas.yaml'
+  - properties:
+      habitacion_tipo:
+        type: array
+        items:
+          $ref: '../habitaciontipo/habitaciontipo.yaml'
+   
+
+    required:
+    
+      - id

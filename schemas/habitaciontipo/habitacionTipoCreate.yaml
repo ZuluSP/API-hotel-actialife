@@ -1,0 +1,28 @@
+  type: object
+
+  required:
+    - tipo_habitacion
+    - precio
+    - m2
+    - numero_habitaciones
+
+
+  properties:
+    tipo_habitacion:
+      type: string
+    
+    precio:
+      type: number
+      format: float
+    
+    descripcion:
+      type: string
+    
+    m2:
+      type: number
+      format: float
+    
+    numero_habitaciones:
+      type: integer
+
+  

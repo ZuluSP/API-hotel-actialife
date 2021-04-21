@@ -1,0 +1,5 @@
+description: Base DTO, reservas Extension
+allOf:
+  - $ref: './reservas.yaml'
+    type: object
+   

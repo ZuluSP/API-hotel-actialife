@@ -1,0 +1,19 @@
+    type: object
+    required:
+      - idUser
+      - fecha_inicio
+      - fecha_fin
+      - id_tipo_habitacion
+
+
+    properties:
+      idUser:
+        type: integer
+      fecha_inicio:
+        type: string
+        format: date
+      fecha_fin:
+        type: string
+        format: date
+      id_tipo_habitacion:
+        type: integer

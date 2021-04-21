@@ -4,10 +4,24 @@ usercreate:
   $ref: "./user/usercreate.yaml"
 usersExtended:
   $ref: "./user/usersExtended.yaml"
+userUpdate:
+  $ref: "./user/userUpdate.yaml"
 role:
   $ref: "./role/role.yaml"
 rolecreate:
   $ref: "./role/rolecreate.yaml"
+roleUpdate:
+  $ref: "./role/roleUpdate.yaml"
+reservas:
+  $ref: "./reservas/reservas.yaml"
+reservasCreate:
+  $ref: "./reservas/reservasCreate.yaml"
+reservasExtendedHabitacionTipo:
+  $ref: "./reservas/reservasExtendedHabitacionTipo.yaml"
+reservasExtendedUser:
+  $ref: "./reservas/reservasExtendedUser.yaml"
+reservasUpdate:
+  $ref: "./reservas/reservasUpdate.yaml"
   
 # Generic
 Binary:

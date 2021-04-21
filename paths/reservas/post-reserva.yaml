@@ -1,0 +1,14 @@
+tags:
+  - Reserva
+summary: Create reserva
+description: Create a new reserva
+operationId: createreserva
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/reservas/reservas.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"

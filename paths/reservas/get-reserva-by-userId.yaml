@@ -1,0 +1,16 @@
+tags:
+  - Reservas
+summary: Get Reserva with user´s ID
+description: Get reserva Extended with rolusere
+operationId: getReservaByUserId
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/reservas/reservasExtendedUser.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"
