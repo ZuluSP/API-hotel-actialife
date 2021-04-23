@@ -2,7 +2,6 @@ type: object
 description: reservas
 allOf:
   - $ref: './reservasCreate.yaml'
-
   - properties:
       id:
         $ref: '../generic/Id.yaml'

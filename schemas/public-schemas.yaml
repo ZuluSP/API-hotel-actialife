@@ -22,6 +22,12 @@ reservasExtendedUser:
   $ref: "./reservas/reservasExtendedUser.yaml"
 reservasUpdate:
   $ref: "./reservas/reservasUpdate.yaml"
+habitacionTipo:
+  $ref: "./habitaciontipo/habitacionTipo.yaml"
+habitacionTipoCreate:
+  $ref: "./habitaciontipo/habitacionTipoCreate.yaml"
+habitacionTipoUpdate:
+  $ref: "./habitaciontipo/habitacionTipoUpdate.yaml"
   
 # Generic
 Binary:

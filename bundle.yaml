@@ -1,0 +1,829 @@
+openapi: 3.0.1
+info:
+  version: 2.0.1
+  title: hotel_actialife
+  description: This is a Base API Project created by mi panita carzul
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /user:
+    post:
+      tags:
+        - User
+      summary: Create user
+      description: Create a new user
+      operationId: createuser
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '404':
+          $ref: '#/components/responses/404'
+    get:
+      tags:
+        - User
+      summary: Find with Pagination without security
+      security: []
+      description: Find all users with pagination parameters without security
+      operationId: findUsers
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user'
+        '400':
+          description: Custom Invalid with array Errors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+  '/user/extended/{id}':
+    get:
+      tags:
+        - User
+      summary: Get user by role´s ID
+      description: Get user Extended with role
+      operationId: getUserByRole
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/usersExtended'
+        '404':
+          $ref: '#/components/responses/404'
+  '/user/{id}':
+    get:
+      tags:
+        - User
+      summary: Find user by ID
+      description: Returns a single user
+      operationId: getUserById
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '400':
+          description: Invalid ID supplied
+          content: {}
+        '404':
+          description: YouModel not found
+          content: {}
+    put:
+      tags:
+        - User
+      summary: Update user
+      description: Update user
+      operationId: updateuser
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userUpdate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '404':
+          $ref: '#/components/responses/404'
+    delete:
+      tags:
+        - User
+      summary: delete user
+      description: delete one user
+      operationId: deleteuser
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '204':
+          description: deleted successfully
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+  /role:
+    get:
+      tags:
+        - Role
+      summary: Get Roles
+      description: Example how to get a Role
+      operationId: getRoles
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/role'
+        '400':
+          description: Custom Invalid with array Errors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+    post:
+      tags:
+        - Role
+      summary: Create role
+      description: Create a new role
+      operationId: createRole
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rolecreate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/role'
+        '404':
+          $ref: '#/components/responses/404'
+  '/role/{id}':
+    put:
+      tags:
+        - Role
+      summary: Update role
+      description: Updates one role
+      operationId: updateRole
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/roleUpdate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/role'
+        '404':
+          $ref: '#/components/responses/404'
+    delete:
+      tags:
+        - Role
+      summary: delete role
+      description: delete one role
+      operationId: deleteRole
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            $ref: '#/components/schemas/Id'
+      responses:
+        '204':
+          description: deleted successfully
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+  /reservas:
+    get:
+      tags:
+        - Reservas
+      summary: Get Reservas
+      description: Example how to get a Reserva
+      operationId: getReservas
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/reservas'
+        '400':
+          description: Custom Invalid with array Errors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+    post:
+      tags:
+        - Reserva
+      summary: Create reserva
+      description: Create a new reserva
+      operationId: createreserva
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservas'
+        '404':
+          $ref: '#/components/responses/404'
+  '/reservas/{id}':
+    get:
+      tags:
+        - Reserva
+      summary: Find reserva by ID
+      description: Returns a single Reserva
+      operationId: getReservaById
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservas'
+        '400':
+          description: Invalid ID supplied
+          content: {}
+        '404':
+          description: Reservas not found
+          content: {}
+    put:
+      tags:
+        - Reserva
+      summary: Update reserva
+      description: Update reserva
+      operationId: updatereserva
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/reservasUpdate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservas'
+        '404':
+          $ref: '#/components/responses/404'
+    delete:
+      tags:
+        - Reserva
+      summary: delete reserva
+      description: delete one reserva
+      operationId: deletereserva
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '204':
+          description: deleted successfully
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+  '/reservas/extended/UserId/{id}':
+    get:
+      tags:
+        - Reservas
+      summary: Get Reserva with user´s ID
+      description: Get reserva Extended with rolusere
+      operationId: getReservaByUserId
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservasExtendedUser'
+        '404':
+          $ref: '#/components/responses/404'
+  '/reservas/extended/habitacionTipo/{id}':
+    get:
+      tags:
+        - Reservas
+      summary: Get all Reservas with room´s ID
+      description: Get reserva Extended with habitacion
+      operationId: getReservaByHabitacionTipo
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservasExtendedHabitacionTipo'
+        '404':
+          $ref: '#/components/responses/404'
+  /habitaciontipo:
+    get:
+      tags:
+        - HabitacionTipo
+      summary: Get Rooms Type
+      description: Example how to get a Room
+      operationId: getHabitacionTipo
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: tipo_habitacion
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/habitacionTipo'
+        '400':
+          description: Custom Invalid with array Errors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+    post:
+      tags:
+        - HabitacionTipo
+      summary: Create new Room Type
+      description: Create a new Room Type
+      operationId: createHabitacionTipo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/habitacionTipoCreate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Type oF room from ActiaLife
+                allOf:
+                  - type: object
+                    required:
+                      - tipo_habitacion
+                      - precio
+                      - m2
+                      - numero_habitaciones
+                    properties:
+                      tipo_habitacion:
+                        type: string
+                      precio:
+                        type: number
+                        format: float
+                      descripcion:
+                        type: string
+                      m2:
+                        type: number
+                        format: float
+                      numero_habitaciones:
+                        type: integer
+                  - properties:
+                      id:
+                        $ref: '#/components/schemas/Id'
+                required:
+                  - id
+        '404':
+          $ref: '#/components/responses/404'
+  '/habitaciontipo/{id}':
+    get:
+      tags:
+        - HabitacionTipo
+      summary: Find room by ID
+      description: Returns a single room
+      operationId: getHabitacionTipoById
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/habitacionTipo'
+        '400':
+          description: Invalid ID supplied
+          content: {}
+        '404':
+          description: Reservas not found
+          content: {}
+    delete:
+      tags:
+        - HabitacionTipo
+      summary: delete room
+      description: delete one room
+      operationId: deleteHabitacionTipo
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            $ref: '#/components/schemas/Id'
+      responses:
+        '204':
+          description: deleted successfully
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+    put:
+      tags:
+        - HabitacionTipo
+      summary: Update roomType
+      description: Update room type
+      operationId: updateHabitacionTipo
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/habitacionTipoUpdate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/habitacionTipo'
+        '404':
+          $ref: '#/components/responses/404'
+components:
+  parameters:
+    attributeParam:
+      description: 'If pagination is attribute-based, returns the attribute that should be used, NO USE'
+      in: query
+      name: attribute
+      schema:
+        type: string
+    limitParam:
+      description: Returns the limit if it has been specified
+      in: query
+      name: limit
+      schema:
+        format: int64
+        type: integer
+    offsetParam:
+      description: 'If pagination is offset-based, returns the number of items to skip'
+      in: query
+      name: offset
+      schema:
+        format: int64
+        type: integer
+    pageParam:
+      description: 'If pagination is page-based, returns the index of the page. Whether this index is 0-based or 1-based, depends on the business framework configuration, NO USE'
+      in: query
+      name: page
+      schema:
+        format: int64
+        type: integer
+    sortParam:
+      description: return the list sorted by the name you put here
+      explode: true
+      in: query
+      name: sort
+      schema:
+        items:
+          type: string
+        type: array
+      style: form
+    stateIds:
+      description: The Default filter is hidesItem=0
+      explode: true
+      in: query
+      name: stateIds
+      schema:
+        items:
+          format: int32
+          type: integer
+        type: array
+      style: form
+    id:
+      description: id of model from path param
+      in: path
+      name: id
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+  schemas:
+    user:
+      type: object
+      description: user of mf bussiness money money
+      allOf:
+        - $ref: '#/components/schemas/usercreate'
+        - properties:
+            userId:
+              $ref: '#/components/schemas/Id'
+          type: object
+          required:
+            - userId
+            - name
+    usercreate:
+      type: object
+      required:
+        - name
+        - surname
+        - email
+        - telf
+        - address
+        - password
+        - roleId
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+        email:
+          type: string
+          format: mail
+        telf:
+          type: string
+        address:
+          type: string
+        password:
+          type: string
+        roleId:
+          type: integer
+    usersExtended:
+      description: 'Base DTO, user Extension with role'
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/user'
+        - properties:
+            role:
+              type: array
+              items:
+                $ref: '#/components/schemas/role'
+          required:
+            - role
+    userUpdate:
+      description: 'Base DTO, user Extension'
+      allOf:
+        - $ref: '#/components/schemas/user'
+          type: object
+    role:
+      type: object
+      description: users roles
+      allOf:
+        - $ref: '#/components/schemas/rolecreate'
+        - properties:
+            id:
+              $ref: '#/components/schemas/Id'
+      required:
+        - id
+        - name
+    rolecreate:
+      type: object
+      required:
+        - nombreRol
+      properties:
+        nombreRol:
+          type: string
+    roleUpdate:
+      description: 'Base DTO, role Extension'
+      allOf:
+        - $ref: '#/components/schemas/role'
+          type: object
+    reservas:
+      type: object
+      description: reservas
+      allOf:
+        - $ref: '#/components/schemas/reservasCreate'
+        - properties:
+            id:
+              $ref: '#/components/schemas/Id'
+      required:
+        - id
+    reservasCreate:
+      type: object
+      required:
+        - idUser
+        - fecha_inicio
+        - fecha_fin
+        - id_tipo_habitacion
+      properties:
+        idUser:
+          type: integer
+        fecha_inicio:
+          type: string
+          format: date
+        fecha_fin:
+          type: string
+          format: date
+        id_tipo_habitacion:
+          type: integer
+    reservasExtendedHabitacionTipo:
+      description: 'Base DTO, user Extension with role'
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/reservas'
+        - properties:
+            habitacion_tipo:
+              type: array
+              items:
+                type: object
+                description: Type oF room from ActiaLife
+                allOf:
+                  - $ref: '#/components/schemas/habitacionTipoCreate'
+                  - properties:
+                      id:
+                        $ref: '#/components/schemas/Id'
+                required:
+                  - id
+          required:
+            - id
+    reservasExtendedUser:
+      description: 'Base DTO, reserva Extension with role'
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/reservas'
+        - properties:
+            user:
+              type: array
+              items:
+                $ref: '#/components/schemas/user'
+          required:
+            - userId
+    reservasUpdate:
+      description: 'Base DTO, reservas Extension'
+      allOf:
+        - $ref: '#/components/schemas/reservas'
+          type: object
+    habitacionTipo:
+      type: object
+      description: Type oF room from ActiaLife
+      allOf:
+        - $ref: '#/components/schemas/habitacionTipoCreate'
+        - properties:
+            id:
+              $ref: '#/components/schemas/Id'
+      required:
+        - id
+    habitacionTipoCreate:
+      type: object
+      required:
+        - tipo_habitacion
+        - precio
+        - m2
+        - numero_habitaciones
+      properties:
+        tipo_habitacion:
+          type: string
+        precio:
+          type: number
+          format: float
+        descripcion:
+          type: string
+        m2:
+          type: number
+          format: float
+        numero_habitaciones:
+          type: integer
+    habitacionTipoUpdate:
+      description: 'Base DTO, habitacionTipo Extension'
+      allOf:
+        - $ref: '#/components/schemas/habitacionTipo'
+          type: object
+    Binary:
+      type: object
+      properties:
+        content:
+          type: string
+          format: binary
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      description: This is returned as error response
+      properties:
+        code:
+          description: internal paperless code error
+          type: string
+        message:
+          description: message error
+          type: string
+        arguments:
+          description: arguments error
+          items:
+            type: string
+          type: array
+    Id:
+      description: id of model
+      type: integer
+      format: int32
+  responses:
+    '200':
+      description: successful operation
+      content: {}
+    '400':
+      description: Invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '404':
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    JwtApiKey:
+      type: apiKey
+      in: header
+      name: JWT_TOKEN
+security:
+  - JwtApiKey: []

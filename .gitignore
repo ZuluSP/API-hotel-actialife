@@ -14,6 +14,7 @@
 *.launch
 .settings/
 *.sublime-workspace
+./swagger-codegen-cli
 
 # IDE - VSCode
 .vscode/*

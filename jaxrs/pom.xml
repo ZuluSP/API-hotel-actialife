@@ -1,0 +1,289 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>hotel_actialife</groupId>
+  <artifactId>hotel_actialife-swagger-rest</artifactId>
+  
+  <packaging>jar</packaging>
+  
+  <name>hotel_actialife-swagger-rest</name>
+  <version>2.0.1</version>
+
+  <licenses>
+    <license>
+      <name>Unlicense</name>
+      <url>http://unlicense.org</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <properties>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Plug-ins -->
+    <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+    <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
+
+    <!-- Dependencies -->
+    <seedstack.version>20.11.1</seedstack.version>
+
+    <swagger-jersey2-jaxrs.version>1.5.24</swagger-jersey2-jaxrs.version>
+    <jaxrs-date-formatter.version>1.0.0</jaxrs-date-formatter.version>
+    
+    <!-- API Versions -->
+    <servlet-api.version>2.5</servlet-api.version>
+
+    <validation-api.version>2.0.1.FINAL</validation-api.version>
+    
+    <inject-api.version>1</inject-api.version>
+    <ws.rs-api.version>2.1.1</ws.rs-api.version>
+
+    <swagger-core.version>2.1.3</swagger-core.version>
+    <jersey2.version>2.31</jersey2.version>
+    <jackson.version>2.11.1</jackson.version>
+    <logback.version>1.3.0-alpha5</logback.version>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>nexus-rest</id>
+      <url>https://nexus.procesos.ctag.com/repository/maven-rest/</url>
+    </repository>
+  </distributionManagement>
+
+  <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${maven-source-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.8</version>
+        <executions>
+          <execution>
+            <id>default-deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+            <configuration>
+              <serverId>nexus</serverId>
+              <nexusUrl>https://nexus.procesos.ctag.com/</nexusUrl>
+              <skipStaging>true</skipStaging>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <serverId>nexus</serverId>
+          <nexusUrl>https://nexus.procesos.ctag.com/</nexusUrl>
+          <skipStaging>true</skipStaging>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.9.1</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/gen/java</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.0.0-M1</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>      
+    </plugins>
+  </build>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.seedstack</groupId>
+        <artifactId>seedstack-bom</artifactId>
+        <version>${seedstack.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet</artifactId>
+        <version>${jersey2.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-yaml</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+        <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.jaxrs</groupId>
+        <artifactId>jackson-jaxrs-json-provider</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+
+  <dependencies>
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-jaxrs2</artifactId>
+      <scope>compile</scope>
+      <version>${swagger-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>${servlet-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <version>${jersey2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-multipart</artifactId>
+      <version>${jersey2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Seedstack -->
+    <dependency>
+      <groupId>org.seedstack.business</groupId>
+      <artifactId>business-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.seedstack.addons.crud</groupId>
+      <artifactId>crud-rest</artifactId>
+    </dependency>
+    <!-- Date module -->
+    <dependency>
+      <groupId>com.ctag.paperless</groupId>
+      <artifactId>jaxrs-json-date-formatter</artifactId>
+      <version>${jaxrs-date-formatter.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.seedstack.addons.modelmapper</groupId>
+          <artifactId>modelmapper</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.seedstack.addons.crud</groupId>
+          <artifactId>crud-rest</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.seedstack.addons.swagger</groupId>
+          <artifactId>swagger</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.zaxxer</groupId>
+          <artifactId>HikariCP</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.seedstack.business</groupId>
+          <artifactId>business-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.datatype</groupId>
+          <artifactId>jackson-datatype-jsr310</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-json-provider</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson.version}</version>
+    </dependency>
+    <!-- Base64 encoding that works in both JVM and Android -->
+    <dependency>
+      <groupId>com.brsanthu</groupId>
+      <artifactId>migbase64</artifactId>
+      <version>2.2</version>
+    </dependency>
+
+  
+    <!-- Bean Validation API support -->
+    <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>${validation-api.version}</version>
+        <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+</project>

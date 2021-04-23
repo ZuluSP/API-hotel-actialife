@@ -1,6 +1,6 @@
 tags:
-  - User-Role
-summary: Get user with role
+  - User
+summary: Get user by role´s ID
 description: Get user Extended with role
 operationId: getUserByRole
 parameters:
