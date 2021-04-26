@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  version: 2.0.1
+  version: 2.0.2
   title: hotel_actialife
   description:
     "This is a Base API Project created by mi panita carzul"

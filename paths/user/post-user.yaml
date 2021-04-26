@@ -3,6 +3,12 @@ tags:
 summary: Create user
 description: Create a new user
 operationId: createuser
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/user/usercreate.yaml"
+  required: true
 responses:
   200:
     description: successful operation

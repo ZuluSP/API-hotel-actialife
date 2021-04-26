@@ -17,9 +17,9 @@ import javax.ws.rs.core.UriInfo;
 import org.seedstack.business.Service;
 
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-23T14:13:04.663+02:00[Europe/Paris]")@Service
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-26T12:23:21.276+02:00[Europe/Paris]")@Service
 public interface UserApiService {
-    public Response createuser(SecurityContext securityContext, UriInfo uriInfo);
+    public Response createuser(UsercreateDto body, SecurityContext securityContext, UriInfo uriInfo);
     public Response deleteuser(Integer id, SecurityContext securityContext, UriInfo uriInfo);
     public Response findUsers( Integer id,  String name, SecurityContext securityContext, UriInfo uriInfo);
     public Response getUserById(Integer id, SecurityContext securityContext, UriInfo uriInfo);

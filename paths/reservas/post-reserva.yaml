@@ -9,6 +9,6 @@ responses:
     content:
       application/json:
         schema:
-          $ref: "../../schemas/reservas/reservas.yaml"
+          $ref: "../../schemas/reservas/reservasCreate.yaml"
   404:
     $ref: "../../responses/generic/error/404/404-response.yaml"

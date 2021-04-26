@@ -45,7 +45,7 @@ public class VersionApi  {
         @ApiResponse(responseCode = "201", description = "successful operation")
      })
     public Response getVersion(@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return Response.ok().entity("{ \"version\" : \"2.0.1\" }").build();
+        return Response.ok().entity("{ \"version\" : \"2.0.2\" }").build();
     }
 
 }

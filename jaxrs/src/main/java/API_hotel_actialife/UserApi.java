@@ -44,7 +44,7 @@ import javax.validation.constraints.*;
 
 @Tag(name = "User", description = "the User API")
 @OpenAPIDefinition
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-23T14:13:04.663+02:00[Europe/Paris]")public class UserApi  {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-26T12:23:21.276+02:00[Europe/Paris]")public class UserApi  {
 
    private final UserApiService delegate;
    
@@ -55,7 +55,7 @@ import javax.validation.constraints.*;
 
     @POST
     
-    
+    @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @Operation(summary = "Create user", description = "Create a new user", security = {
         @SecurityRequirement(name = "JwtApiKey")    }, tags={ "User" })
@@ -63,8 +63,11 @@ import javax.validation.constraints.*;
         @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = UserDto.class))),
         
         @ApiResponse(responseCode = "404", description = "Not found", content = @Content(schema = @Schema(implementation = ErrorDto.class))) })
-    public Response createuser(@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return delegate.createuser(securityContext,uriInfo);
+    public Response createuser(
+            
+    @Parameter(in = ParameterIn.DEFAULT, description = "" ,required=true)  UsercreateDto body
+,@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
+        return delegate.createuser(body,securityContext,uriInfo);
     }
     @DELETE
     @Path("/{id}")
