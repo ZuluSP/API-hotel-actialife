@@ -22,7 +22,7 @@ import javax.validation.constraints.*;
 /**
  * UsercreateDto
  */
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-26T12:23:21.276+02:00[Europe/Paris]")public class UsercreateDto   {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-27T12:44:19.179+02:00[Europe/Paris]")public class UsercreateDto   {
   @JsonProperty("name")
   protected String name = null;
 

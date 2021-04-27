@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
  * user of mf bussiness money money
  */
 @Schema(description = "user of mf bussiness money money")
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-26T12:23:21.276+02:00[Europe/Paris]")public class UserDto extends UsercreateDto  {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-27T12:44:19.179+02:00[Europe/Paris]")public class UserDto extends UsercreateDto  {
   @JsonProperty("userId")
   protected Integer userId = null;
 

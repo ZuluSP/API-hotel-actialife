@@ -44,7 +44,7 @@ import javax.validation.constraints.*;
 
 @Tag(name = "Reserva", description = "the Reserva API")
 @OpenAPIDefinition
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-26T12:23:21.276+02:00[Europe/Paris]")public class ReservaApi  {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-27T12:44:19.179+02:00[Europe/Paris]")public class ReservaApi  {
 
    private final ReservaApiService delegate;
    
@@ -55,16 +55,19 @@ import javax.validation.constraints.*;
 
     @POST
     
-    
+    @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @Operation(summary = "Create reserva", description = "Create a new reserva", security = {
         @SecurityRequirement(name = "JwtApiKey")    }, tags={ "Reserva" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = ReservasCreateDto.class))),
+        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = ReservasDto.class))),
         
         @ApiResponse(responseCode = "404", description = "Not found", content = @Content(schema = @Schema(implementation = ErrorDto.class))) })
-    public Response createreserva(@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return delegate.createreserva(securityContext,uriInfo);
+    public Response createreserva(
+            
+    @Parameter(in = ParameterIn.DEFAULT, description = "" ,required=true)  ReservasCreateDto body
+,@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
+        return delegate.createreserva(body,securityContext,uriInfo);
     }
     @DELETE
     @Path("/{id}")
