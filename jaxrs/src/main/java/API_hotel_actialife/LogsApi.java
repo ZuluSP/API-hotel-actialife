@@ -3,7 +3,7 @@ package API_hotel_actialife;
 import javax.inject.Inject;
 
 import actialife.*;
-import API_hotel_actialife.HabitacionTipoApiService;
+import API_hotel_actialife.LogsApiService;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
@@ -38,107 +38,109 @@ import javax.ws.rs.*;
 
 import javax.validation.constraints.*;
 
-@Path("/habitaciontipo")
+@Path("/log")
 
 
 
-@Tag(name = "HabitacionTipo", description = "the HabitacionTipo API")
+@Tag(name = "Logs", description = "the Logs API")
 @OpenAPIDefinition
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-28T09:02:06.631+02:00[Europe/Paris]")public class HabitacionTipoApi  {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-28T09:02:06.631+02:00[Europe/Paris]")public class LogsApi  {
 
-   private final HabitacionTipoApiService delegate;
+   private final LogsApiService delegate;
    
    @Inject
-   HabitacionTipoApi(HabitacionTipoApiService delegate){
+   LogsApi(LogsApiService delegate){
         this.delegate = delegate;
    }
 
     @POST
-    
+    @Path("/{id}")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @Operation(summary = "Create new Room Type", description = "Create a new Room Type", security = {
-        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "HabitacionTipo" })
+    @Operation(summary = "Create log", description = "Create a new log", security = {
+        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "Logs" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = InlineResponse200Dto.class))),
+        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = LogsDto.class))),
         
         @ApiResponse(responseCode = "404", description = "Not found", content = @Content(schema = @Schema(implementation = ErrorDto.class))) })
-    public Response createHabitacionTipo(
+    public Response createLog(
             
-    @Parameter(in = ParameterIn.DEFAULT, description = "" ,required=true)  HabitacionTipoCreateDto body
+    @Parameter(in = ParameterIn.DEFAULT, description = "" ,required=true)  LogsCreateDto body
 ,@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return delegate.createHabitacionTipo(body,securityContext,uriInfo);
+        return delegate.createLog(body,securityContext,uriInfo);
     }
     @DELETE
     @Path("/{id}")
     
     @Produces({ "application/json" })
-    @Operation(summary = "delete room", description = "delete one room", security = {
-        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "HabitacionTipo" })
+    @Operation(summary = "delete log", description = "delete one log", security = {
+        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "Logs" })
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "204", description = "deleted successfully"),
         
         @ApiResponse(responseCode = "400", description = "Invalid", content = @Content(schema = @Schema(implementation = ErrorDto.class))),
         
         @ApiResponse(responseCode = "404", description = "Not found", content = @Content(schema = @Schema(implementation = ErrorDto.class))) })
-    public Response deleteHabitacionTipo(
+    public Response deleteLog(
             
     @Parameter(in = ParameterIn.PATH, description = "",required=true) @PathParam("id")  Integer id
 ,@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return delegate.deleteHabitacionTipo(id,securityContext,uriInfo);
+        return delegate.deleteLog(id,securityContext,uriInfo);
     }
     @GET
     
     
     @Produces({ "application/json" })
-    @Operation(summary = "Get Rooms Type", description = "Example how to get a Room", security = {
-        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "HabitacionTipo" })
+    @Operation(summary = "Get Logs", description = "Example how to get a Reserva", security = {
+        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "Logs" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(array = @ArraySchema(schema = @Schema(implementation = HabitacionTipoDto.class)))),
+        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(array = @ArraySchema(schema = @Schema(implementation = LogsDto.class)))),
         
         @ApiResponse(responseCode = "400", description = "Custom Invalid with array Errors", content = @Content(array = @ArraySchema(schema = @Schema(implementation = ErrorDto.class)))),
         
         @ApiResponse(responseCode = "401", description = "Unauthorized", content = @Content(schema = @Schema(implementation = ErrorDto.class))),
         
         @ApiResponse(responseCode = "404", description = "Not found", content = @Content(schema = @Schema(implementation = ErrorDto.class))) })
-    public Response getAllRooms(@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return delegate.getAllRooms(securityContext,uriInfo);
+    public Response getAllLogs(@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
+        return delegate.getAllLogs(securityContext,uriInfo);
     }
     @GET
     @Path("/{id}")
     
     @Produces({ "application/json" })
-    @Operation(summary = "Find room by ID", description = "Returns a single room", security = {
-        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "HabitacionTipo" })
+    @Operation(summary = "Get Logs by User Id", description = "Example how to get a log", security = {
+        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "Logs" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = HabitacionTipoDto.class))),
+        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(array = @ArraySchema(schema = @Schema(implementation = LogsDto.class)))),
         
-        @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
+        @ApiResponse(responseCode = "400", description = "Custom Invalid with array Errors", content = @Content(array = @ArraySchema(schema = @Schema(implementation = ErrorDto.class)))),
         
-        @ApiResponse(responseCode = "404", description = "Reservas not found") })
-    public Response getHabitacionTipoById(
+        @ApiResponse(responseCode = "401", description = "Unauthorized", content = @Content(schema = @Schema(implementation = ErrorDto.class))),
+        
+        @ApiResponse(responseCode = "404", description = "Not found", content = @Content(schema = @Schema(implementation = ErrorDto.class))) })
+    public Response getLogsByUserId(
             
-    @Parameter(in = ParameterIn.PATH, description = "id of model from path param",required=true) @PathParam("id")  Integer id
+    @Parameter(in = ParameterIn.QUERY, description = "") @QueryParam("idUser")  Integer idUser
 ,@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return delegate.getHabitacionTipoById(id,securityContext,uriInfo);
+        return delegate.getLogsByUserId(idUser,securityContext,uriInfo);
     }
     @PUT
     @Path("/{id}")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @Operation(summary = "Update roomType", description = "Update room type", security = {
-        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "HabitacionTipo" })
+    @Operation(summary = "Update log", description = "Update log", security = {
+        @SecurityRequirement(name = "JwtApiKey")    }, tags={ "Logs" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = HabitacionTipoDto.class))),
+        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = LogsDto.class))),
         
         @ApiResponse(responseCode = "404", description = "Not found", content = @Content(schema = @Schema(implementation = ErrorDto.class))) })
-    public Response updateHabitacionTipo(
+    public Response updateLog(
             
-    @Parameter(in = ParameterIn.DEFAULT, description = "" ,required=true)  HabitacionTipoUpdateDto body
+    @Parameter(in = ParameterIn.DEFAULT, description = "" ,required=true)  LogsUpdateDto body
 ,
             
     @Parameter(in = ParameterIn.PATH, description = "id of model from path param",required=true) @PathParam("id")  Integer id
 ,@Context SecurityContext securityContext,@Context UriInfo uriInfo) {
-        return delegate.updateHabitacionTipo(body,id,securityContext,uriInfo);
+        return delegate.updateLog(body,id,securityContext,uriInfo);
     }
 }

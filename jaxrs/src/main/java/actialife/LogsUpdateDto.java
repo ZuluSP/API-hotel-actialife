@@ -18,16 +18,16 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import javax.validation.constraints.*;
 
 /**
- * Base DTO, habitacionTipo Extension
+ * Base DTO, reservas Extension
  */
-@Schema(description = "Base DTO, habitacionTipo Extension")
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-28T09:02:06.631+02:00[Europe/Paris]")public class HabitacionTipoUpdateDto extends HabitacionTipoDto  {
+@Schema(description = "Base DTO, reservas Extension")
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-28T09:02:06.631+02:00[Europe/Paris]")public class LogsUpdateDto extends LogsDto  {
 
-  public HabitacionTipoUpdateDto(){
+  public LogsUpdateDto(){
    //Empty Constructor
   }
   
-  public HabitacionTipoUpdateDto(HabitacionTipoUpdateDto parentDto){
+  public LogsUpdateDto(LogsUpdateDto parentDto){
    super(parentDto);
   }
 
@@ -52,7 +52,7 @@ import javax.validation.constraints.*;
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class HabitacionTipoUpdateDto {\n");
+    sb.append("class LogsUpdateDto {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

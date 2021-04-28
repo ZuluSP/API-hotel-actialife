@@ -18,9 +18,10 @@ import org.seedstack.business.Service;
 
 import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-28T09:02:06.631+02:00[Europe/Paris]")@Service
-public interface RoleApiService {
-    public Response createRole(RolecreateDto body, SecurityContext securityContext, UriInfo uriInfo);
-    public Response deleteRole(Integer id, SecurityContext securityContext, UriInfo uriInfo);
-    public Response getRoles( Integer id,  String name, SecurityContext securityContext, UriInfo uriInfo);
-    public Response updateRole(RoleUpdateDto body, Integer id, SecurityContext securityContext, UriInfo uriInfo);
+public interface LogsApiService {
+    public Response createLog(LogsCreateDto body, SecurityContext securityContext, UriInfo uriInfo);
+    public Response deleteLog(Integer id, SecurityContext securityContext, UriInfo uriInfo);
+    public Response getAllLogs(SecurityContext securityContext, UriInfo uriInfo);
+    public Response getLogsByUserId( Integer idUser, SecurityContext securityContext, UriInfo uriInfo);
+    public Response updateLog(LogsUpdateDto body, Integer id, SecurityContext securityContext, UriInfo uriInfo);
 }

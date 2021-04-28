@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
  * reservas
  */
 @Schema(description = "reservas")
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-27T12:44:19.179+02:00[Europe/Paris]")public class ReservasDto extends ReservasCreateDto  {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-28T09:02:06.631+02:00[Europe/Paris]")public class ReservasDto extends ReservasCreateDto  {
   @JsonProperty("id")
   protected Integer id = null;
 
