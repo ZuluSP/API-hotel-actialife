@@ -1,8 +1,15 @@
 tags:
-  - HabitacionTipo
-summary: Get Rooms Type
-description: Example how to get a Room
-operationId: getAllRooms
+  - Logs
+summary: Get Logs by User Id
+description: Example how to get a log
+operationId: getLogsByUserId
+
+parameters:
+  - in: query
+    name: idUser
+    schema:
+      type: integer
+      format: int32
 
 
 responses:
@@ -13,7 +20,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: "../../schemas/habitaciontipo/habitacionTipo.yaml"
+            $ref: "../../schemas/logs/logs.yaml"
   400:
     description: Custom Invalid with array Errors
     content:

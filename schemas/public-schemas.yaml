@@ -28,6 +28,12 @@ habitacionTipoCreate:
   $ref: "./habitaciontipo/habitacionTipoCreate.yaml"
 habitacionTipoUpdate:
   $ref: "./habitaciontipo/habitacionTipoUpdate.yaml"
+logs:
+  $ref: "./logs/logs.yaml"
+logsCreate:
+  $ref: "./logs/logsCreate.yaml"
+logsUpdate:
+  $ref: "./logs/logsUpdate.yaml"
   
 # Generic
 Binary:

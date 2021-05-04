@@ -1,9 +1,8 @@
 tags:
-  - HabitacionTipo
-summary: Get Rooms Type
-description: Example how to get a Room
-operationId: getAllRooms
-
+  - Logs
+summary: Get Logs
+description: Example how to get a Reserva
+operationId: getAllLogs
 
 responses:
   200:
@@ -13,7 +12,7 @@ responses:
         schema:
           type: array
           items:
-            $ref: "../../schemas/habitaciontipo/habitacionTipo.yaml"
+            $ref: "../../schemas/logs/logs.yaml"
   400:
     description: Custom Invalid with array Errors
     content:

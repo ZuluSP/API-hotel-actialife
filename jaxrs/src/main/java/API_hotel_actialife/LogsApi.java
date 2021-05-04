@@ -44,7 +44,7 @@ import javax.validation.constraints.*;
 
 @Tag(name = "Logs", description = "the Logs API")
 @OpenAPIDefinition
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-28T09:02:06.631+02:00[Europe/Paris]")public class LogsApi  {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-30T12:30:57.699+02:00[Europe/Paris]")public class LogsApi  {
 
    private final LogsApiService delegate;
    
@@ -54,7 +54,7 @@ import javax.validation.constraints.*;
    }
 
     @POST
-    @Path("/{id}")
+    
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @Operation(summary = "Create log", description = "Create a new log", security = {
@@ -105,7 +105,7 @@ import javax.validation.constraints.*;
         return delegate.getAllLogs(securityContext,uriInfo);
     }
     @GET
-    @Path("/{id}")
+    @Path("/extended")
     
     @Produces({ "application/json" })
     @Operation(summary = "Get Logs by User Id", description = "Example how to get a log", security = {

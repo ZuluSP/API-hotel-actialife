@@ -1,0 +1,13 @@
+    type: object
+    required:
+      - idUser
+      - log
+      - time
+
+    properties:
+      idUser:
+        type: integer
+      log:
+        type: string
+      time:
+        type: string

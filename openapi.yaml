@@ -1,12 +1,14 @@
 openapi: 3.0.1
 info:
-  version: 2.0.2
+  version: 2.0.3
   title: hotel_actialife
   description:
     "This is a Base API Project created by mi panita carzul"
 servers:
-  - url: http://localhost:8080
+  - url: http://localhost:8080/hotel.actialife-deploy/
 
+#tags:
+ # $ref: "./paths/public-tags.yaml"
 paths:
   $ref: "./paths/public-paths.yaml"
 components:

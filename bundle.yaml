@@ -1,10 +1,10 @@
 openapi: 3.0.1
 info:
-  version: 2.0.2
+  version: 2.0.3
   title: hotel_actialife
   description: This is a Base API Project created by mi panita carzul
 servers:
-  - url: 'http://localhost:8080'
+  - url: 'http://localhost:8080/deploy/api'
 paths:
   /user:
     post:
@@ -403,17 +403,7 @@ paths:
         - HabitacionTipo
       summary: Get Rooms Type
       description: Example how to get a Room
-      operationId: getHabitacionTipo
-      parameters:
-        - in: query
-          name: id
-          schema:
-            type: integer
-            format: int32
-        - in: query
-          name: tipo_habitacion
-          schema:
-            type: string
+      operationId: getAllRooms
       responses:
         '200':
           description: successful operation
@@ -544,6 +534,132 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/habitacionTipo'
+        '404':
+          $ref: '#/components/responses/404'
+  /log:
+    get:
+      tags:
+        - Logs
+      summary: Get Logs
+      description: Example how to get a Reserva
+      operationId: getAllLogs
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/logs'
+        '400':
+          description: Custom Invalid with array Errors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+    post:
+      tags:
+        - Logs
+      summary: Create log
+      description: Create a new log
+      operationId: createLog
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/logsCreate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/logs'
+        '404':
+          $ref: '#/components/responses/404'
+  /log/extended:
+    get:
+      tags:
+        - Logs
+      summary: Get Logs by User Id
+      description: Example how to get a log
+      operationId: getLogsByUserId
+      parameters:
+        - in: query
+          name: idUser
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/logs'
+        '400':
+          description: Custom Invalid with array Errors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+  '/log/{id}':
+    put:
+      tags:
+        - Logs
+      summary: Update log
+      description: Update log
+      operationId: updateLog
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/logsUpdate'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/logs'
+        '404':
+          $ref: '#/components/responses/404'
+    delete:
+      tags:
+        - Logs
+      summary: delete log
+      description: delete one log
+      operationId: deleteLog
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            $ref: '#/components/schemas/Id'
+      responses:
+        '204':
+          description: deleted successfully
+        '400':
+          $ref: '#/components/responses/400'
         '404':
           $ref: '#/components/responses/404'
 components:
@@ -781,6 +897,34 @@ components:
       description: 'Base DTO, habitacionTipo Extension'
       allOf:
         - $ref: '#/components/schemas/habitacionTipo'
+          type: object
+    logs:
+      type: object
+      description: logs
+      allOf:
+        - $ref: '#/components/schemas/logsCreate'
+        - properties:
+            id:
+              $ref: '#/components/schemas/Id'
+      required:
+        - id
+    logsCreate:
+      type: object
+      required:
+        - idUser
+        - log
+        - time
+      properties:
+        idUser:
+          type: integer
+        log:
+          type: string
+        time:
+          type: string
+    logsUpdate:
+      description: 'Base DTO, reservas Extension'
+      allOf:
+        - $ref: '#/components/schemas/logs'
           type: object
     Binary:
       type: object

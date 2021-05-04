@@ -1,0 +1,10 @@
+type: object
+description: logs
+allOf:
+  - $ref: './logsCreate.yaml'
+  - properties:
+      id:
+        $ref: '../generic/Id.yaml'
+        
+required:
+  - id

@@ -1,11 +1,11 @@
 /user:
-    post:
-      $ref: "./user/post-user.yaml"
-    get:
-      $ref: "./user/get-all.yaml"
- 
+  post:
+    $ref: "./user/post-user.yaml"
+  get:
+    $ref: "./user/get-all.yaml"
+
 /user/extended/{id}:
-  get:  
+  get:
     $ref: "./user/get-user-by-role.yaml"
 
 /user/{id}:
@@ -19,7 +19,7 @@
 /role:
   get:
     $ref: "./role/get-all.yaml"
-  
+
   post:
     $ref: "./role/post-role.yaml"
 
@@ -57,13 +57,25 @@
     $ref: "./habitaciontipo/post-habitacionTipo.yaml"
 
 /habitaciontipo/{id}:
-
   get:
     $ref: "./habitaciontipo/get-habitacionTipo-by-id.yaml"
   delete:
     $ref: "./habitaciontipo/delete-habitacionTipo.yaml"
-  put: 
+  put:
     $ref: "./habitaciontipo/put-habitacionTipo.yaml"
-  
 
+/log:
+  get:
+    $ref: "./logs/get-all.yaml"
+  post:
+    $ref: "./logs/post-log.yaml"
 
+/log/extended:
+  get:
+    $ref: "./logs/get-logs-by-User.yaml"
+    
+/log/{id}:
+  put:
+    $ref: "./logs/put-logs.yaml"
+  delete:
+    $ref: "./logs/delete-logs.yaml"

@@ -1,0 +1,22 @@
+tags:
+  - Logs
+summary: Update log
+description: Update log
+operationId: updateLog
+parameters:
+  - $ref: "../../parameters/id/id-path-param.yaml"
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "../../schemas/logs/logsUpdate.yaml"
+  required: true
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/logs/logs.yaml"
+  404:
+    $ref: "../../responses/generic/error/404/404-response.yaml"
