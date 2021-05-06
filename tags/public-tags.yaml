@@ -1,0 +1,10 @@
+- name: HabitacionTipo
+  description: Everything about HabitacionTipo is here
+- name: Logs
+  description: Everything about Logs is here
+- name: Reserva
+  description: Everything about Reserva is here
+- name: Role
+  description: Everything about Role is here
+- name: User
+  description: Everything about User is here

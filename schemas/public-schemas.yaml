@@ -1,40 +1,40 @@
-user:
+User:
   $ref: "./user/user.yaml"
-usercreate:
+Usercreate:
   $ref: "./user/usercreate.yaml"
-usersExtended:
+UsersExtended:
   $ref: "./user/usersExtended.yaml"
-userUpdate:
+UserUpdate:
   $ref: "./user/userUpdate.yaml"
-role:
+Role:
   $ref: "./role/role.yaml"
-rolecreate:
+Rolecreate:
   $ref: "./role/rolecreate.yaml"
-roleUpdate:
+RoleUpdate:
   $ref: "./role/roleUpdate.yaml"
-reservas:
+Reservas:
   $ref: "./reservas/reservas.yaml"
-reservasCreate:
+ReservasCreate:
   $ref: "./reservas/reservasCreate.yaml"
-reservasExtendedHabitacionTipo:
+ReservasExtendedHabitacionTipo:
   $ref: "./reservas/reservasExtendedHabitacionTipo.yaml"
-reservasExtendedUser:
+ReservasExtendedUser:
   $ref: "./reservas/reservasExtendedUser.yaml"
-reservasUpdate:
+ReservasUpdate:
   $ref: "./reservas/reservasUpdate.yaml"
-habitacionTipo:
+HabitacionTipo:
   $ref: "./habitaciontipo/habitacionTipo.yaml"
-habitacionTipoCreate:
+HabitacionTipoCreate:
   $ref: "./habitaciontipo/habitacionTipoCreate.yaml"
-habitacionTipoUpdate:
+HabitacionTipoUpdate:
   $ref: "./habitaciontipo/habitacionTipoUpdate.yaml"
-logs:
+Logs:
   $ref: "./logs/logs.yaml"
-logsCreate:
+LogsCreate:
   $ref: "./logs/logsCreate.yaml"
-logsUpdate:
+LogsUpdate:
   $ref: "./logs/logsUpdate.yaml"
-  
+
 # Generic
 Binary:
   $ref: './generic/Binary.yaml'
