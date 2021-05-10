@@ -5,10 +5,10 @@ info:
   description:
     "This is a Base API Project created by mi panita carzul"
 servers:
-  - url: http://localhost:8080/hotel.actialife-deploy/
+  - url: http://localhost:8080/deploy/api
 
-#tags:
- # $ref: "./paths/public-tags.yaml"
+tags:
+  $ref: "./tags/public-tags.yaml"
 paths:
   $ref: "./paths/public-paths.yaml"
 components:

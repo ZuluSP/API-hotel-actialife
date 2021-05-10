@@ -17,7 +17,7 @@ import javax.ws.rs.core.UriInfo;
 import org.seedstack.business.Service;
 
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-30T12:30:57.699+02:00[Europe/Paris]")@Service
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-05-10T14:13:55.611+02:00[Europe/Paris]")@Service
 public interface LogsApiService {
     public Response createLog(LogsCreateDto body, SecurityContext securityContext, UriInfo uriInfo);
     public Response deleteLog(Integer id, SecurityContext securityContext, UriInfo uriInfo);

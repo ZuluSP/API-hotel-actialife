@@ -7,7 +7,7 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: "../../schemas/user/usercreate.yaml"
+        $ref: "./../../schemas/user/usercreate.yaml"
   required: true
 responses:
   200:
@@ -17,4 +17,5 @@ responses:
         schema:
           $ref: "../../schemas/user/user.yaml"
   404:
+
     $ref: "../../responses/generic/error/404/404-response.yaml"

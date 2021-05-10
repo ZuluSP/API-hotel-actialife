@@ -25,7 +25,7 @@ import javax.validation.constraints.*;
  * Base DTO, reserva Extension with role
  */
 @Schema(description = "Base DTO, reserva Extension with role")
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-30T12:30:57.699+02:00[Europe/Paris]")public class ReservasExtendedUserDto extends ReservasDto  {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-05-10T14:13:55.611+02:00[Europe/Paris]")public class ReservasExtendedUserDto extends ReservasDto  {
   @JsonProperty("user")
   protected List<UserDto> user = null;
 

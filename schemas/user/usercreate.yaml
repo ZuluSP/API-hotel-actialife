@@ -1,5 +1,6 @@
   
   type: object
+  description: Step Create DTO
   required:
     - name
     - surname

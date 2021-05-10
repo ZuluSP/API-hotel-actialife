@@ -1,0 +1,12 @@
+- name: User
+  description: all Users
+- name: Role
+  description: all roles
+- name: Reserva
+  description: get one reserva
+- name: HabitacionTipo
+  description: all rooms
+- name: Logs
+  description: all Logs
+- name: Reservas
+  description: all reservas

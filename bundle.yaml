@@ -5,6 +5,19 @@ info:
   description: This is a Base API Project created by mi panita carzul
 servers:
   - url: 'http://localhost:8080/deploy/api'
+tags:
+  - name: User
+    description: all Users
+  - name: Role
+    description: all roles
+  - name: Reserva
+    description: get one reserva
+  - name: HabitacionTipo
+    description: all rooms
+  - name: Logs
+    description: all Logs
+  - name: Reservas
+    description: all reservas
 paths:
   /user:
     post:
@@ -728,12 +741,12 @@ components:
         - properties:
             userId:
               $ref: '#/components/schemas/Id'
-          type: object
           required:
             - userId
             - name
     usercreate:
       type: object
+      description: Step Create DTO
       required:
         - name
         - surname

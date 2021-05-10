@@ -20,9 +20,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import javax.validation.constraints.*;
 
 /**
- * UsercreateDto
+ * Step Create DTO
  */
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-30T12:30:57.699+02:00[Europe/Paris]")public class UsercreateDto   {
+@Schema(description = "Step Create DTO")
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-05-10T14:13:55.611+02:00[Europe/Paris]")public class UsercreateDto   {
   @JsonProperty("name")
   protected String name = null;
 

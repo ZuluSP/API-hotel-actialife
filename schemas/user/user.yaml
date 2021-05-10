@@ -8,8 +8,6 @@ allOf:
       userId:
         $ref: "../generic/Id.yaml"
 
-    type: object
-
     required:
       - userId
       - name

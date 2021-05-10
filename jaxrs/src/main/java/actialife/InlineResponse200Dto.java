@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
  * Type oF room from ActiaLife
  */
 @Schema(description = "Type oF room from ActiaLife")
-@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-04-30T12:30:57.699+02:00[Europe/Paris]")public class InlineResponse200Dto   {
+@javax.annotation.Generated(value = "com.ctag.codegen.languages.v3.java.jaxrs.JavaSeedstackJerseyServerCodegen", date = "2021-05-10T14:13:55.611+02:00[Europe/Paris]")public class InlineResponse200Dto   {
   @JsonProperty("id")
   protected Integer id = null;
 
