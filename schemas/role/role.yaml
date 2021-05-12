@@ -9,5 +9,4 @@ allOf:
         
 required:
   - id
-  - name
   

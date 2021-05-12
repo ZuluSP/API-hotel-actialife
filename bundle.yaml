@@ -743,7 +743,6 @@ components:
               $ref: '#/components/schemas/Id'
           required:
             - userId
-            - name
     usercreate:
       type: object
       description: Step Create DTO
@@ -798,7 +797,6 @@ components:
               $ref: '#/components/schemas/Id'
       required:
         - id
-        - name
     rolecreate:
       type: object
       required:

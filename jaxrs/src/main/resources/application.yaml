@@ -1,4 +1,4 @@
 application:
   id: hotel_actialife-swagger-rest
-  basePackage: [API_hotel_actialife]
+  basePackage: [com.ctag.hotel.rest.api]
   version: 2.0.3
